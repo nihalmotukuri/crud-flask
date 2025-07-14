@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+</head>
+<body>
+    <h2>Students & Enrolled Courses</h2>
+    <a href="/add_student">Add Student</a>
+    <ul>
+        {% for s in students %}
+            <li>
+                <b>{{ s.name }}</b> enrolled in:
+                {{ s.enrolled_courses | join(', ') if s.enrolled_courses else 'No courses' }}
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
