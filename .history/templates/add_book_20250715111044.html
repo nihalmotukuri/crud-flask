@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Books</title>
+</head>
+
+<body>
+    <h2>Add New Book</h2>
+    <form method="POST">
+        Title: <input type="text" name="title" required><br>
+        Authors:<br>
+        {% for course in courses %}
+        <input type="checkbox" name="courses" value="{{ course._id }}">
+        {{ course.name }}<br>
+        {% endfor %}
+        <button type="submit">Add</button>
+    </form>
+
+</body>
+
+</html>

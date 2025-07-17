@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+    <ul>
+        {% for book in books_list %}
+            <li>
+                {{ book.title }}<br>{{ book.genre }}<br>{{ book.authors | join(', ') if book.authors else "" }}<br>
+                <h2>Add Authors</h2>
+                {% for author in authors_list %}
+                <input type="checkbox" name="authors" value="{{  }}">
+                {% endfor %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

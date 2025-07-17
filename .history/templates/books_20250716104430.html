@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+
+<body>
+    <ul>
+        {% for book in books_list %}
+        <li>
+            {{ book.title }}<br>{{ book.genre }}<br>
+            <!-- Authors: {{ book['author_names'] | join(', ') if book['author_names'] else 'N/A' }} -->
+             Authors: 
+                {% author_names = [] %}
+             {% for b_id in book['author_ids']%}
+             {% endfor %}
+            <a href="/update_book/{{ book._id }}">Add Authors</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

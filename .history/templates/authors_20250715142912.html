@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors</title>
+</head>
+<body>
+    <ul>
+        {% for author in authors_list %}
+            <li>
+            {{ author.title }}<br>
+            Authors: {{ book['author_names'] | join(', ') if book['author_names'] else 'N/A' }}
+            <a href="/update_book/{{ book._id }}">Add Authors</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

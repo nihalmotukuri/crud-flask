@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Author</title>
+</head>
+<body>
+    <form method="POST">
+        {% for book in books_list %}
+        <input type="checkbox" name="books" value="{{ author._id }}" />{{ author.author_name }}
+        {% endfor %}
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>
